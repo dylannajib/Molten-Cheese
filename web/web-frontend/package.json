@@ -1,0 +1,23 @@
+{
+    "_comment": "dev starts local frontend, build checks TypeScript before creating files, preview serves file creation locally",
+    "name": "molten-cheese-web-frontend",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc --noEmit --project typescript_config.json && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "^26.6.6",
+        "@types/react": "^19.3.0",
+        "@types/react-dom": "^19.3.0",
+        "@vitejs/plugin-react": "^6.1.2",
+        "typescript": "^7.0.2",
+        "vite": "^8.3.5"
+    }
+}

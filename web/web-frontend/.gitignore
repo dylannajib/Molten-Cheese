@@ -1,0 +1,3 @@
+# Outcome: Keep installed dependencies and generated builds out of Git
+node_modules/
+dist/

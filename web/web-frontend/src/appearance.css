@@ -1,0 +1,569 @@
+/* Outcome: Borders and padding stay inside each element's stated size */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-gutter: stable both-edges;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    isolation: isolate;
+    background: #8f462d;
+    color: #e9e5da;
+    font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+button, a, summary {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, summary {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+button:focus-visible, a:focus-visible, summary:focus-visible {
+    outline: 3px solid #ffcb68;
+    outline-offset: 5px;
+}
+
+
+/* Outcome: Your supplied summer artwork replaces every previous background effect */
+
+.landing {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 48px 24px;
+}
+
+/* Outcome: The page image stays fixed while the disclosure changes document height */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url("../image-assets/bace.jpg") center / cover no-repeat;
+    pointer-events: none;
+}
+
+.page-content {
+    --hud-gradient: linear-gradient(90deg, #080605 0%, #0d0907 38%, #23140c 72%, #65320f 100%);
+    --content-inset: 18px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+/* Outcome: Equal-width charcoal glass panels share one centre line */
+
+.hero-stage, .additional-content {
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+    border: 1px solid #e3c68f77;
+    border-radius: 7px;
+    background: var(--hud-gradient);
+    background-color: #080605;
+    box-shadow: inset 0 1px #fff3d612, 0 12px 30px #21120466;
+    backdrop-filter: none;
+}
+
+/* Outcome: A local SVG brush filter roughens the cheese bands on both opaque HUDs */
+
+.hero-stage::before, .additional-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: url("../image-assets/cheese-brush.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.hero-stage {
+    position: relative;
+    padding: 47px 28px;
+}
+
+/* Outcome: Preserve the original button and mascot offsets while centring their shared canvas */
+
+.hero-canvas {
+    position: relative;
+    width: min(100%, 980px);
+    aspect-ratio: 980 / 694.34375;
+    margin: 0 auto;
+    container-type: inline-size;
+}
+
+.brand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 87.7551%;
+}
+
+/* Outcome: Fixed reference coordinates keep the hero independent of changing content below */
+
+.brand h1 {
+    position: relative;
+    aspect-ratio: 1734 / 652;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Outcome: Trim transparent margins visually without altering your original artwork */
+
+.brand-logo {
+    position: absolute;
+    top: -14.1104%;
+    left: -2.7105%;
+    display: block;
+    width: 105.421%;
+    max-width: none;
+    height: auto;
+}
+
+
+/* Outcome: Copy and download sit left of the mascot on desktop */
+
+.hero-layout {
+    display: contents;
+}
+
+.hero-copy {
+    position: absolute;
+    top: 42.040816cqw;
+    left: 2.1429%;
+    width: 44.1837%;
+    min-width: 0;
+}
+
+.hero-copy h2 {
+    width: 100%;
+    margin: 0 0 10px 9px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(24px, 3.4694cqw, 34px);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-shadow: 0 2px 6px #0006;
+}
+
+.mascot-frame {
+    position: absolute;
+    top: 32.653061cqw;
+    left: 42.8571%;
+    width: 56.4286%;
+    aspect-ratio: 1201 / 813;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.mascot {
+    position: absolute;
+    top: -25.0923%;
+    left: -8.4097%;
+    display: block;
+    width: 110.2415%;
+    max-width: none;
+    height: auto;
+}
+
+
+/* Outcome: Native release notes expand by mouse or keyboard and wrap long text */
+
+/* Outcome: Fixed decorative layers let the lower HUD grow without rescaling its background */
+
+.additional-content {
+    margin: 12px auto 0;
+    padding: 28px 36px;
+    overflow: hidden;
+}
+
+.additional-content::before {
+    inset: 0 0 auto;
+    height: 520px;
+    background-size: 100% 520px;
+    mask-image: linear-gradient(#000 0%, #000 84%, transparent 100%);
+}
+
+.memorial, .description {
+    padding-inline: var(--content-inset);
+}
+
+.memorial {
+    margin: 0 0 20px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.description {
+    margin: 0 0 26px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.description p {
+    margin: 0 0 16px;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+.release-notes {
+    padding: 0;
+    border: 1px solid #e3c68f66;
+    border-radius: 4px;
+    background: var(--hud-gradient);
+    background-color: #080605;
+    box-shadow: inset 0 1px #ffffff18, 0 3px 8px #0007;
+    overflow: hidden;
+}
+
+.release-notes-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    padding: 15px calc(var(--content-inset) - 1px);
+    border: 0;
+    background: none;
+    color: #fff;
+    font: bold 14px Tahoma, Verdana, Arial, sans-serif;
+    text-align: left;
+}
+
+.release-notes-toggle:focus-visible {
+    outline-offset: -4px;
+}
+
+/* Outcome: The arrow and content animate together without changing the gradient surface */
+
+.release-notes-arrow {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: 4px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 280ms ease;
+    flex-shrink: 0;
+}
+
+.release-notes-toggle[aria-expanded="true"] .release-notes-arrow {
+    transform: rotate(45deg);
+}
+
+.release-notes-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 280ms ease, opacity 220ms ease;
+}
+
+.release-notes-content.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+.release-notes-clip {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.release-notes-body {
+    padding: 0 calc(var(--content-inset) - 1px) 16px;
+}
+
+.release-notes p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.release-date {
+    display: block;
+    margin-top: 7px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Outcome: Gloss, bevels and Tahoma create an early-2000s download button */
+
+.download-button, .github-link {
+    color: #262a2e;
+    border: 1px solid;
+    border-color: #fff #b4b3af #92918d #fff;
+    background: linear-gradient(#fff 45%, #eee 48%, #fff);
+    box-shadow: 0 2px 0 #11120f;
+}
+
+.download-button {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr) 64px;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 112px;
+    padding: 14px 15px;
+    text-align: left;
+    font: bold 20px Tahoma, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+.download-button:hover:not(:disabled), .github-link:hover {
+    background: #fff;
+}
+
+/* Outcome: Press feedback changes light and shadow without moving the control */
+
+.download-button:active:not(:disabled), .github-link:active {
+    box-shadow: inset 0 2px 5px #0002;
+}
+
+.windows-mark {
+    display: block;
+    width: 76px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.download-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    min-height: 80px;
+}
+
+.download-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    line-height: 1.15;
+}
+
+.download-prefix {
+    display: block;
+    font-size: 20px;
+}
+
+.download-platform {
+    display: block;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.download-notice {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+}
+
+.download-subtext {
+    display: block;
+    margin-top: 4px;
+    color: #555b60;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.download-side {
+    align-self: end;
+    padding-bottom: 4px;
+}
+
+.download-metadata {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    max-width: 100%;
+    color: #50565a;
+    text-align: right;
+    font: 10px/1.2 Tahoma, Verdana, sans-serif;
+    font-variant-numeric: tabular-nums;
+}
+
+.download-version {
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.download-size {
+    color: #62696f;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 11px;
+    width: 156px;
+    height: 44px;
+    margin-top: 18px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.github-mark {
+    display: block;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+}
+
+
+/* Outcome: Narrow screens stack the content without restricting scrolling */
+
+@media (max-width: 860px) {
+    .landing {
+        padding: 28px 16px;
+    }
+
+    .hero-stage {
+        padding: 44px 22px;
+    }
+
+    .hero-canvas {
+        display: flex;
+        flex-direction: column;
+        aspect-ratio: auto;
+    }
+
+    .brand {
+        position: relative;
+        width: 100%;
+    }
+
+    .hero-copy {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: min(100%, 433px);
+        margin: 48px auto 0;
+        padding-bottom: 84px;
+    }
+
+    .hero-copy h2 {
+        margin-left: 0;
+        font-size: clamp(17px, 4.6vw, 30px);
+    }
+
+    .mascot-frame {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: min(100%, 500px);
+        margin: -12px auto 0;
+    }
+
+    .additional-content {
+        margin-top: 16px;
+        padding: 24px 22px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .additional-content::before {
+        height: 840px;
+        background-size: 100% 840px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-stage, .additional-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .download-button {
+        grid-template-columns: 60px minmax(0, 1fr) 53px;
+        gap: 7px;
+        padding: 12px 10px;
+    }
+
+    .windows-mark {
+        width: 60px;
+        height: 64px;
+    }
+
+    .download-prefix {
+        font-size: 17px;
+    }
+
+    .download-platform {
+        font-size: 23px;
+    }
+
+    .download-notice {
+        font-size: 17px;
+    }
+
+    .download-subtext {
+        font-size: 9px;
+    }
+
+    .download-metadata {
+        font-size: 9px;
+    }
+}
+
+
+/* Outcome: Small phones retain both button text lines without squeezing the support label */
+
+@media (max-width: 380px) {
+    .download-button {
+        grid-template-columns: 48px minmax(0, 1fr) 45px;
+        gap: 5px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .windows-mark {
+        width: 48px;
+        height: 60px;
+    }
+
+    .download-platform {
+        font-size: 22px;
+    }
+}
+
+
+/* Outcome: Reduced-motion preferences make the disclosure open without animation */
+
+@media (prefers-reduced-motion: reduce) {
+    .release-notes-content, .release-notes-arrow {
+        transition: none;
+    }
+}

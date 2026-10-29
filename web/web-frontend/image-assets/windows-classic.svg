@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 128">
+    <defs>
+        <linearGradient id="red" x2=".3" y2="1"><stop stop-color="#f35a28"/><stop offset="1" stop-color="#bc3213"/></linearGradient>
+        <linearGradient id="green" x2=".2" y2="1"><stop stop-color="#94e32c"/><stop offset="1" stop-color="#47a30e"/></linearGradient>
+        <linearGradient id="blue" x2=".3" y2="1"><stop stop-color="#64c8f7"/><stop offset="1" stop-color="#2587cf"/></linearGradient>
+        <linearGradient id="yellow" x2=".2" y2="1"><stop stop-color="#f9df4d"/><stop offset="1" stop-color="#b5a120"/></linearGradient>
+    </defs>
+    <g transform="rotate(-6 78 64)">
+        <g fill="#111315">
+            <path d="m34 5 6 1-3 5-6-1zM43 12l8 2-4 7-8-2zM51 23l10 2-5 9-10-2zM59 36l12 2-6 11-12-2zM54 52l12 2-6 11-12-2zM48 69l12 2-6 11-12-2zM42 86l12 2-6 11-12-2zM36 102l12 2-6 11-12-2z"/>
+            <path d="m15 36 6 1-3 5-6-1zM24 45l8 2-4 7-8-2zM30 57l10 2-5 9-10-2zM25 72l10 2-5 9-10-2zM18 86l10 2-5 9-10-2zM7 81l6 1-3 5-6-1zM4 99l7 1-3 6-7-1z"/>
+        </g>
+        <g fill="#db4b24"><path d="m27 17 6 1-3 5-6-1zM34 27l9 2-4 8-9-2zM40 39l11 2-5 10-11-2zM34 53l11 2-5 10-11-2zM18 29l6 1-3 5-6-1z"/></g>
+        <g fill="#409ed4"><path d="m9 52 6 1-3 5-6-1zM16 63l9 2-4 8-9-2zM10 76l8 2-4 7-8-2zM31 86l10 2-5 9-10-2zM25 101l10 2-5 9-10-2z"/></g>
+        <path fill="#111315" d="M77 29C98 17 125 28 152 47L127 125C104 105 84 104 57 104Z"/>
+        <path fill="url(#red)" d="M82 36C90 33 98 34 108 37L100 65C91 61 81 61 73 64Z"/>
+        <path fill="url(#green)" d="M118 41C126 45 134 49 141 55L132 83C124 77 116 72 109 70Z"/>
+        <path fill="url(#blue)" d="M70 75C79 72 88 72 97 76L89 101C80 98 70 97 62 99Z"/>
+        <path fill="url(#yellow)" d="M106 80C114 83 122 88 129 94L121 116C113 110 105 105 98 104Z"/>
+    </g>
+</svg>

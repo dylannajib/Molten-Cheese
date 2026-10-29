@@ -1,0 +1,34 @@
+<!--
+// Outcome: Supplies React's mount point & load its entry script
+-->
+
+<!doctype html>                                                <!-- // Uses modern HTML -->
+
+<html lang="en">                                               <!-- // English section starter -->
+    
+    <head>
+        <meta charset="UTF-8"/>                                <!-- // Support unicode text -->
+
+                                                               <!-- // Controls screen scaling -->
+                                                               <!-- // Use the user device's default width & zoom -->
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        />
+
+                                                               <!-- // Page description metadata -->
+        <meta
+            name="description"
+            content="Molten Cheese -- Honeyfile & EDR Antivirus"
+        />
+
+        <title>Molten Cheese</title>                           <!-- // Browser tab title -->
+    </head>
+
+    <body>
+        <div id="root"></div>                                  <!-- // React renders the website into this element -->
+
+        <script type="module" src="/src/main.tsx"></script>    <!-- // Starts the frontend application -->
+    </body>
+    
+</html>
