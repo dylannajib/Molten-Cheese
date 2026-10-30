@@ -50,12 +50,12 @@ body::before {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url("../image-assets/bace.jpg") center / cover no-repeat;
+    background: url("../image-assets/blue-sky-background.png") center / cover no-repeat;
     pointer-events: none;
 }
 
 .page-content {
-    --hud-gradient: linear-gradient(90deg, #080605 0%, #0d0907 38%, #23140c 72%, #65320f 100%);
+    --hud-gradient: linear-gradient(90deg, #080808 0%, #101010 38%, #171717 72%, #202020 100%);
     --content-inset: 18px;
     max-width: 1040px;
     margin: 0 auto;
@@ -70,7 +70,7 @@ body::before {
     border: 1px solid #e3c68f77;
     border-radius: 7px;
     background: var(--hud-gradient);
-    background-color: #080605;
+    background-color: #080808;
     box-shadow: inset 0 1px #fff3d612, 0 12px 30px #21120466;
     backdrop-filter: none;
 }
@@ -99,7 +99,7 @@ body::before {
 .hero-canvas {
     position: relative;
     width: min(100%, 980px);
-    aspect-ratio: 980 / 694.34375;
+    aspect-ratio: 980 / 718.34375;
     margin: 0 auto;
     container-type: inline-size;
 }
@@ -162,7 +162,7 @@ body::before {
 
 .mascot-frame {
     position: absolute;
-    top: 32.653061cqw;
+    top: calc(32.653061cqw + 24px);
     left: 42.8571%;
     width: 56.4286%;
     aspect-ratio: 1201 / 813;
@@ -224,13 +224,11 @@ body::before {
     margin-bottom: 0;
 }
 
+/* Outcome: Gloss stays at the button height while white notes expand beneath it */
+
 .release-notes {
     padding: 0;
-    border: 1px solid #e3c68f66;
-    border-radius: 4px;
-    background: var(--hud-gradient);
-    background-color: #080605;
-    box-shadow: inset 0 1px #ffffff18, 0 3px 8px #0007;
+    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -243,7 +241,7 @@ body::before {
     padding: 15px calc(var(--content-inset) - 1px);
     border: 0;
     background: none;
-    color: #fff;
+    color: #000;
     font: bold 14px Tahoma, Verdana, Arial, sans-serif;
     text-align: left;
 }
@@ -294,7 +292,7 @@ body::before {
 
 .release-notes p {
     margin: 0;
-    color: #fff;
+    color: #000;
     font-size: 14px;
     line-height: 1.7;
     white-space: pre-wrap;
@@ -304,7 +302,7 @@ body::before {
 .release-date {
     display: block;
     margin-top: 7px;
-    color: #fff;
+    color: #000;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -312,7 +310,7 @@ body::before {
 
 /* Outcome: Gloss, bevels and Tahoma create an early-2000s download button */
 
-.download-button, .github-link {
+.download-button, .github-link, .release-notes {
     color: #262a2e;
     border: 1px solid;
     border-color: #fff #b4b3af #92918d #fff;
@@ -320,33 +318,42 @@ body::before {
     box-shadow: 0 2px 0 #11120f;
 }
 
+/* Outcome: Opening notes reveals white space without stretching the glossy highlight */
+
+.release-notes {
+    color: #000;
+    background-color: #fff;
+    background-size: 100% 48px;
+    background-repeat: no-repeat;
+}
+
 .download-button {
     display: grid;
-    grid-template-columns: 76px minmax(0, 1fr) 64px;
+    grid-template-columns: 52px minmax(0, 1fr) 64px;
     align-items: center;
     gap: 10px;
     width: 100%;
-    height: 112px;
+    height: 92px;
     padding: 14px 15px;
     text-align: left;
     font: bold 20px Tahoma, Verdana, sans-serif;
     border-radius: 5px;
 }
 
-.download-button:hover:not(:disabled), .github-link:hover {
+.download-button:hover:not(:disabled), .github-link:hover, .release-notes-toggle:hover {
     background: #fff;
 }
 
 /* Outcome: Press feedback changes light and shadow without moving the control */
 
-.download-button:active:not(:disabled), .github-link:active {
+.download-button:active:not(:disabled), .github-link:active, .release-notes-toggle:active {
     box-shadow: inset 0 2px 5px #0002;
 }
 
 .windows-mark {
     display: block;
-    width: 76px;
-    height: 72px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
 }
 
@@ -355,41 +362,36 @@ body::before {
     flex-direction: column;
     justify-content: center;
     min-width: 0;
-    min-height: 80px;
+    container-type: inline-size;
 }
+
+/* Outcome: Both text lines match in width and shrink together on small screens */
 
 .download-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60px;
+    height: 50px;
+    font-size: min(20px, 14.755cqw);
     line-height: 1.15;
 }
 
 .download-prefix {
     display: block;
-    font-size: 20px;
+    font-size: 1em;
+    white-space: nowrap;
 }
 
 .download-platform {
     display: block;
-    font-size: 26px;
+    font-size: 1.0954147em;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .download-notice {
     font-size: 20px;
     overflow-wrap: anywhere;
-}
-
-.download-subtext {
-    display: block;
-    margin-top: 4px;
-    color: #555b60;
-    font-size: 11px;
-    font-weight: normal;
-    line-height: 16px;
-    white-space: nowrap;
 }
 
 .download-side {
@@ -507,30 +509,23 @@ body::before {
     }
 
     .download-button {
-        grid-template-columns: 60px minmax(0, 1fr) 53px;
+        grid-template-columns: 45px minmax(0, 1fr) 53px;
         gap: 7px;
         padding: 12px 10px;
     }
 
     .windows-mark {
-        width: 60px;
-        height: 64px;
+        width: 45px;
+        height: 45px;
     }
 
-    .download-prefix {
-        font-size: 17px;
-    }
-
-    .download-platform {
-        font-size: 23px;
+    .download-label {
+        height: 43px;
+        font-size: min(17px, 14.755cqw);
     }
 
     .download-notice {
         font-size: 17px;
-    }
-
-    .download-subtext {
-        font-size: 9px;
     }
 
     .download-metadata {
@@ -543,19 +538,20 @@ body::before {
 
 @media (max-width: 380px) {
     .download-button {
-        grid-template-columns: 48px minmax(0, 1fr) 45px;
+        grid-template-columns: 39px minmax(0, 1fr) 45px;
         gap: 5px;
         padding-left: 8px;
         padding-right: 8px;
     }
 
     .windows-mark {
-        width: 48px;
-        height: 60px;
+        width: 39px;
+        height: 39px;
     }
 
-    .download-platform {
-        font-size: 22px;
+    .download-label {
+        height: 37px;
+        font-size: min(15px, 14.755cqw);
     }
 }
 

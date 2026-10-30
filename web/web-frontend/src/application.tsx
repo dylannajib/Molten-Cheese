@@ -3,7 +3,7 @@ import { formatFileSize, type ReleaseInfo } from "./release";
 import { useRelease } from "./useRelease";
 import logo from "../image-assets/molten-cheese-logo.png";
 import mascot from "../image-assets/molten-cheese-mascot.png";
-import windowsClassic from "../image-assets/windows-classic.svg";
+import windowsModern from "../image-assets/windows-modern.png";
 import githubMark from "../image-assets/github-mark.png";
 
 const COMING_SOON_MS = 2_500;
@@ -16,7 +16,7 @@ const INITIAL_RELEASE_NOTE = "v0.0.0 - Hello world!";
 
 function WindowsMark() {
     return (
-        <img className="windows-mark" src={windowsClassic} alt="" aria-hidden="true" />
+        <img className="windows-mark" src={windowsModern} alt="" aria-hidden="true" />
     )
 }
 
@@ -96,7 +96,7 @@ function DownloadButton({release, checking, onCheck}: DownloadButtonProps) {
         }
     }
     
-    let label = "Download for Windows";
+    let label = "Download for Windows 11";
 
     if (notice === "coming_soon") {
         label = "Coming soon!"
@@ -115,22 +115,19 @@ function DownloadButton({release, checking, onCheck}: DownloadButtonProps) {
             onClick={handleDownload}
             disabled={busy || checking || notice !== null}
             aria-busy={busy || checking}
-            aria-label={`${label}, Supported: Windows 11`}
+            aria-label={label}
         >
             <WindowsMark />
             <span className="download-copy">
                 <span className="download-label" aria-live="polite">
-                    {label === "Download for Windows" ? (
+                    {label === "Download for Windows 11" ? (
                         <>
                             <span className="download-prefix">Download for</span>{" "}
-                            <span className="download-platform">Windows</span>
+                            <span className="download-platform">Windows 11</span>
                         </>
                     ) : <span className="download-notice">{label}</span>}
                 </span>
 
-                <span className="download-subtext">
-                    Supported: Windows 11
-                </span>
             </span>
             {/* Sub-Outcome: Fixed metadata stays on the right while the main label changes */}
             <span className="download-side">
