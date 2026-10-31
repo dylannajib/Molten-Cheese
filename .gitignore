@@ -4,3 +4,12 @@ __pycache__/
 .env
 .env.*
 !.env.example
+/target/
+/server/.env
+/server/pki/
+/server/certs
+/server/issued
+/server/devices.ndjson
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
