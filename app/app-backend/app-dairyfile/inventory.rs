@@ -80,3 +80,7 @@ impl Inventory {     // Groups inventory operations
         Ok(u64::try_from(bytes)?)       // Rejects invalid negative total
     }     // Ends reserved-size lookup
 }     // Ends inventory operations
+
+#[path="inventory-runtime.rs"]
+mod runtime_storage;
+pub use runtime_storage::Dairyfile;
