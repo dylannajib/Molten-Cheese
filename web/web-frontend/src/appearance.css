@@ -67,11 +67,11 @@ body::before {
     width: 100%;
     position: relative;
     isolation: isolate;
-    border: 1px solid #e3c68f77;
+    border: 0;
     border-radius: 7px;
     background: var(--hud-gradient);
     background-color: #080808;
-    box-shadow: inset 0 1px #fff3d612, 0 12px 30px #21120466;
+    box-shadow: 0 12px 30px #21120466;
     backdrop-filter: none;
 }
 
@@ -141,7 +141,7 @@ body::before {
 
 .hero-copy {
     position: absolute;
-    top: 42.040816cqw;
+    top: calc(42.040816cqw - 24px);
     left: 2.1429%;
     width: 44.1837%;
     min-width: 0;
@@ -149,7 +149,7 @@ body::before {
 
 .hero-copy h2 {
     width: 100%;
-    margin: 0 0 10px 9px;
+    margin: 0 0 4px 9px;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(24px, 3.4694cqw, 34px);
@@ -158,6 +158,35 @@ body::before {
     line-height: 1.2;
     white-space: nowrap;
     text-shadow: 0 2px 6px #0006;
+}
+
+/* Outcome: Light grey integration credits sit between the heading and the download button */
+
+.hero-tagline {
+    margin: 0 0 10px 9px;
+    color: #c4c4c4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.hero-tagline a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero-tagline a:hover {
+    text-decoration: underline;
+}
+
+/* Outcome: Copyright notice sits in the top HUD's bottom-right corner */
+
+.copyright {
+    position: absolute;
+    right: 14px;
+    bottom: 10px;
+    color: #c4c4c4;
+    font: 11px Tahoma, Verdana, Arial, sans-serif;
 }
 
 .mascot-frame {
@@ -427,7 +456,6 @@ body::before {
     gap: 11px;
     width: 156px;
     height: 44px;
-    margin-top: 18px;
     padding: 8px 14px;
     font-size: 14px;
     font-weight: bold;
@@ -435,11 +463,23 @@ body::before {
     border-radius: 4px;
 }
 
+.github-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
 .github-mark {
     display: block;
     width: 25px;
     height: 25px;
     flex-shrink: 0;
+}
+
+.github-avatar {
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 

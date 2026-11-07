@@ -5,6 +5,7 @@ import logo from "../image-assets/molten-cheese-logo.png";
 import mascot from "../image-assets/molten-cheese-mascot.png";
 import windowsModern from "../image-assets/windows-modern.png";
 import githubMark from "../image-assets/github-mark.png";
+import myGithub from "../image-assets/my-github.png";
 
 const COMING_SOON_MS = 2_500;
 
@@ -204,23 +205,37 @@ export default function App() {
                     <div className="hero-layout">
                     <section className="hero-copy" aria-label="About and download">
                         <h2>Honeyfile &amp; EDR Antivirus</h2>
+                        <p className="hero-tagline">
+                            Integrated with{" "}
+                            <a href="https://github.com/defenxor/dsiem" target="_blank" rel="noopener noreferrer">Dsiem</a>
+                            {" "}(<a href="https://github.com/mmta" target="_blank" rel="noopener noreferrer">@mmta</a>. My dad, btw) &amp;{" "}
+                            <a href="https://www.elastic.co/elastic-stack" target="_blank" rel="noopener noreferrer">ELK Stack</a>
+                        </p>
                         <DownloadButton release={release} checking={checking} onCheck={refresh} />
-                        <a className="github-link" href="https://github.com/dylannajib"
-                            target="_blank" rel="noopener noreferrer">
-                            <img src={githubMark} className="github-mark" alt="" aria-hidden="true" />
-                            <span>GitHub</span>
-                        </a>
+                        <div className="github-links">
+                            <a className="github-link" href="https://github.com/dylannajib/Molten-Cheese"
+                                target="_blank" rel="noopener noreferrer">
+                                <img src={githubMark} className="github-mark" alt="" aria-hidden="true" />
+                                <span>GitHub Repo</span>
+                            </a>
+                            <a className="github-link" href="https://github.com/dylannajib"
+                                target="_blank" rel="noopener noreferrer">
+                                <img src={myGithub} className="github-mark github-avatar" alt="" aria-hidden="true" />
+                                <span>My GitHub</span>
+                            </a>
+                        </div>
                     </section>
                     <div className="mascot-frame">
                         <img className="mascot" src={mascot} alt="Molten Cheese mascot holding a mousetrap" />
                     </div>
                     </div>
                     </div>
+                    <small className="copyright">Copyright (c) 2026 Dylan Najib</small>
                 </div>
                 <section className="additional-content" aria-label="Description and release notes">
-                    <p className="memorial"><em>In memory of the Cheese Worm, 2001</em></p>
+                    <p className="memorial"><em><strong>In memory of the Cheese Worm, 2001</strong></em></p>
                     <div className="description">
-                        <p>Dairyfile: Safe honeyfiles ("decoys") spread across your computer to catch malware processes off-guard. Once opened, Dairyfiles will suspend the malware process and notify both you and ChEDR.</p>
+                        <p>Dairyfile: Non-interruptive honeyfiles ("decoys") spread across your computer. Like tripwires, they'll send an alarm event to Elastic Agent (who'll forward it to ELK Stack) and Dsiem to confirm whether or not the process that interacted with them was a malware. If it is, ChEDR will be notified.</p>
                         <p>ChEDR: (Chelating Endpoint Detection and Response) Monitors your computer continuously for any cyber threats. Unlike traditional EDRs, ChEDR will not interrupt legitimate processes of the infected host. ChEDR will besiege it to suspend any outgoing malware processes until it could find, isolate and quarantine the malware.</p>
                         <p>Afterwards, you can safely remove or disinfect the malware for careful study</p>
                     </div>
